@@ -1,0 +1,36 @@
+{
+  "name": "adjetiveisor-aas",
+  "version": "1.0.0",
+  "description": "This project exposes some configurations of adjetiveisor npm package on express api, just for fun.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agm-dev/adjetiveisor-aas.git"
+  },
+  "keywords": [
+    "adjetiveisor",
+    "aas",
+    "fun",
+    "joke"
+  ],
+  "author": "Adrián Gonzalo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agm-dev/adjetiveisor-aas/issues"
+  },
+  "homepage": "https://github.com/agm-dev/adjetiveisor-aas#readme",
+  "dependencies": {
+    "adjetiveisor": "latest",
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4",
+    "nodemon": "^1.11.0"
+  }
+}
