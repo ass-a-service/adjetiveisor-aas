@@ -1,18 +1,17 @@
-const adjetiveisor = require('adjetiveisor');
-const h = require('../helpers');
+const adjetiveisor = require('adjetiveisor')
+const h = require('../helpers')
 
-const putoTranslator = adjetiveisor();
+const putoTranslator = adjetiveisor()
 const config = {
   ms: 'puto',
   mp: 'putos',
   fs: 'puta',
   fp: 'putas'
-};
+}
 
-const translator = 'puto';
+const translator = 'puto'
 
-putoTranslator.config(config);
-
+putoTranslator.config(config)
 
 exports.usage = (req, res) => {
   const apiDefinition = {
@@ -35,37 +34,37 @@ exports.usage = (req, res) => {
         }
       ]
     }
-  };
-  const data = apiDefinition;
-  const result = h.apiResponse(data);
-  res.status(200).send(result);
+  }
+  const data = apiDefinition
+  const result = h.apiResponse(data)
+  res.status(200).send(result)
 }
 
 exports.translate = (req, res) => {
   if (typeof req.body.text !== 'string') {
-    const fail = h.apiFail(400, 'Bad Request: you need to provide text param');
-    res.status(400).send(fail);
-    return;
+    const fail = h.apiFail(400, 'Bad Request: you need to provide text param')
+    res.status(400).send(fail)
+    return
   }
   try {
-    const text = req.body.text;
-    const verbose = req.body.verbose || false;
+    const text = req.body.text
+    const verbose = req.body.verbose || false
     if (verbose === true) {
-      putoTranslator.verbose(true);
+      putoTranslator.verbose(true)
     } else {
-      putoTranslator.verbose(false);
+      putoTranslator.verbose(false)
     }
-    const textTranslated = putoTranslator.translate(text);
+    const textTranslated = putoTranslator.translate(text)
     const data = {
       text,
       translation: textTranslated,
       translator
-    };
-    const result = h.apiResponse(data);
-    res.status(200).send(result);
+    }
+    const result = h.apiResponse(data)
+    res.status(200).send(result)
   } catch (e) {
-    const fail = h.apiFail();
-    res.status(500).send(fail);
-    console.log(e);
+    const fail = h.apiFail()
+    res.status(500).send(fail)
+    console.log(e)
   }
 }

@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const putoController = require('../controllers/putoController');
+const express = require('express')
+const router = express.Router()
+const putoController = require('../controllers/putoController')
 
-router.get('/puto', putoController.usage);
-router.post('/puto', putoController.translate);
+router.get('/puto', putoController.usage)
+router.post('/puto', putoController.translate)
 
-module.exports = router;
+module.exports = router
