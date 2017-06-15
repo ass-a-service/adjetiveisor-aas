@@ -1,5 +1,6 @@
 const adjetiveisor = require('adjetiveisor')
 const h = require('../helpers')
+const l = require('../utils/logger')
 
 const putoTranslator = adjetiveisor()
 const config = {
@@ -62,6 +63,7 @@ exports.translate = (req, res) => {
     }
     const result = h.apiResponse(data)
     res.status(200).send(result)
+    l.Log(result.text,result.translation)
   } catch (e) {
     const fail = h.apiFail()
     res.status(500).send(fail)
