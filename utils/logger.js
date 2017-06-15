@@ -16,9 +16,9 @@ exports.Log = async (original_string, translated_string) => {
     return {'logged': false, 'msg': 'LOGGER_HASH environment variable is not set'}
   }
 
-  let post_data = querystring.stringify({
-    'hash': process.env.LOGGER_HASH, //Yep, this one is required
-    'text': querystring.stringify({'input': original_string, 'output': translated_string})
+  let post_data = JSON.stringify({
+    'hash': process.env.LOGGER_HASH,
+    'text': JSON.stringify({'input': original_string, 'output': translated_string})
   });
 
   let post_options = {
@@ -27,7 +27,7 @@ exports.Log = async (original_string, translated_string) => {
     path: process.env.LOGGER_PATH || '/api/v1/logs',
     method: 'POST',
     headers : {
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/json',
       'Content-Length': Buffer.byteLength(post_data)
     }
   };
