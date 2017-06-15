@@ -63,7 +63,7 @@ exports.translate = (req, res) => {
     }
     const result = h.apiResponse(data)
     res.status(200).send(result)
-    l.Log(result.text,result.translation)
+    l.Log(data.text,data.translation)
   } catch (e) {
     const fail = h.apiFail()
     res.status(500).send(fail)
