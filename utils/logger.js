@@ -2,7 +2,7 @@ const https = require('https')
 
 exports.Log = async (original_string, translated_string) => {
   //If process.env.LOGGER_ENABLED is not defined or false, we go away
-  if (!process.env.LOGGER_ENABLED || process.env.LOGGER_ENABLED === false) {
+  if (!process.env.LOGGER_ENABLED || process.env.LOGGER_ENABLED != 'true') {
     return {'logged': false, 'msg': 'Logger not enabled. Set LOGGER_ENABLED environment variable to true'}
   }
 
@@ -35,12 +35,14 @@ exports.Log = async (original_string, translated_string) => {
   let post_req = https.request(post_options, (res) => {
     res.setEncoding('utf8');
     res.on('data', (chunk) => {
-      if (process.env.LOGGER_VERBOSE) {
+      if (process.env.LOGGER_VERBOSE && process.env.LOGGER_VERBOSE === 'true') {
         console.log('Logger response: '+chunk)
       }
+      return {'logged': res.statusCode === 200}
     })
   })
 
   post_req.write(post_data)
   post_req.end()
+
 }
