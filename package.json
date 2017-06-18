@@ -4,8 +4,7 @@
   "description": "This project exposes some configurations of adjetiveisor npm package on express api, just for fun.",
   "main": "server.js",
   "scripts": {
-    "prod": "node ./server.js",
-    "start": "nodemon server.js",
+    "dev": "nodemon server.js",
     "test": "jest"
   },
   "repository": {
