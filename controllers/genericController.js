@@ -21,8 +21,6 @@ const loggerConfig = {
 const l = logger(loggerConfig)
 const genericTranslator = adjetiveisor()
 
-const translator = 'puto'
-
 const checkTranslator = (req, res) => {
   if (typeof translators[req.params.adjective] === 'undefined') {
     const responseText = `Translation not configured: ${req.params.adjective}`
@@ -87,7 +85,7 @@ exports.translate = (req, res) => {
     const data = {
       text,
       translation: textTranslated,
-      translator
+      translator: req.params.adjective
     }
     const result = h.apiResponse(data)
     res.status(200).send(result)
