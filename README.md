@@ -27,3 +27,24 @@ You should get a response like this:
    ]
 }
 ```
+
+# Endpoints
+Right now these are the endpoints configured:
+
+> GET https://adjetiveisor.assa.services/puto
+
+> POST https://adjetiveisor.assa.services/puto
+____
+
+> GET https://adjetiveisor.assa.services/jodido
+
+> POST https://adjetiveisor.assa.services/jodido
+____
+
+> GET https://adjetiveisor.assa.services/malpario
+
+> POST https://adjetiveisor.assa.services/malpario
+____
+> GET https://adjetiveisor.assa.services/maldito
+
+> POST https://adjetiveisor.assa.services/maldito

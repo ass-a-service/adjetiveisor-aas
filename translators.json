@@ -1,0 +1,20 @@
+{
+  "jodido": {
+    "ms": "jodido",
+    "mp": "jodidos",
+    "fs": "jodida",
+    "fp": "jodidas"
+  },
+  "malpario": {
+    "ms": "malpario",
+    "mp": "malparios",
+    "fs": "malparia",
+    "fp": "malparias"
+  },
+  "maldito": {
+    "ms": "maldito",
+    "mp": "malditos",
+    "fs": "maldita",
+    "fp": "malditas"
+  }
+}
