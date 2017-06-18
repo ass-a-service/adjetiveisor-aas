@@ -22,4 +22,4 @@ COPY . /usr/src/app
 
 EXPOSE ${SERVER_PORT}
 
-ENTRYPOINT ["npm", "runscript", "prod"]
+CMD [ "npm", "runscript", "prod" ]
