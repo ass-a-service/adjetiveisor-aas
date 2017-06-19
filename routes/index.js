@@ -3,6 +3,8 @@ const router = express.Router()
 const putoController = require('../controllers/putoController')
 const genericController = require('../controllers/genericController')
 
+router.get('/translators', genericController.getTranslators)
+
 router.get('/puto', putoController.usage)
 router.post('/puto', putoController.translate)
 

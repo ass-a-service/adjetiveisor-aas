@@ -96,3 +96,9 @@ exports.translate = (req, res) => {
     console.log(e)
   }
 }
+
+exports.getTranslators = (req, res) => {
+  const translatorsList = Object.keys(translators)
+  const response = h.apiResponse(translatorsList)
+  res.status(200).send(response)
+}
