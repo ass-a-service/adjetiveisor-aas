@@ -8,6 +8,9 @@ require('dotenv').config()
 
 const server = express()
 
+//Make life more difficult for hackers that don't read Github
+server.disable('x-powered-by');
+
 server.use(cors())
 server.use(bodyParser.json())
 server.use('/', router)
