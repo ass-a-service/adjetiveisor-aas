@@ -3,7 +3,7 @@
 
 #Then configure nginx and well like restart it or reload it and do your very best with this. It's just awesome.
 
-FROM node:6.11.0
+FROM node:6.11.1
 MAINTAINER Axel Amigo <adamigo@neversyn.com>
 
 #Define the environment variables
