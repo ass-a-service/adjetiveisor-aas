@@ -1,8 +1,6 @@
 const adjetiveisor = require('adjetiveisor')
 const h = require('../helpers')
 
-require('dotenv').config()
-
 const putoTranslator = adjetiveisor()
 const config = {
   ms: 'puto',

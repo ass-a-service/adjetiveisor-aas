@@ -5,9 +5,6 @@
 
 FROM node:6.11.5
 
-#Define the environment variables
-ENV SERVER_PORT=80
-
 #Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
@@ -18,7 +15,5 @@ RUN npm install
 
 # Bundle app source (this is not a sexy process)
 COPY . /usr/src/app
-
-EXPOSE ${SERVER_PORT}
 
 CMD [ "npm", "run", "prod" ]

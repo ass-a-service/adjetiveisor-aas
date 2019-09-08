@@ -2,8 +2,6 @@
 const adjetiveisor = require('adjetiveisor')
 const h = require('../helpers')
 
-require('dotenv').config()
-
 // Import adjectives:
 const translators = require('../translators.json')
 
