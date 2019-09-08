@@ -4,10 +4,9 @@
 #Then configure nginx and well like restart it or reload it and do your very best with this. It's just awesome.
 
 FROM node:6.11.5
-MAINTAINER Axel Amigo <adamigo@neversyn.com>
 
 #Define the environment variables
-ENV SERVER_PORT=8000
+ENV SERVER_PORT=80
 
 #Create app directory
 RUN mkdir -p /usr/src/app
@@ -22,4 +21,4 @@ COPY . /usr/src/app
 
 EXPOSE ${SERVER_PORT}
 
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "prod" ]

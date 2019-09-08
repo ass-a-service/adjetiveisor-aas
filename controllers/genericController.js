@@ -1,6 +1,5 @@
 // Requires:
 const adjetiveisor = require('adjetiveisor')
-const logger = require('loggeraas-node-wrapper')
 const h = require('../helpers')
 
 require('dotenv').config()
@@ -8,17 +7,6 @@ require('dotenv').config()
 // Import adjectives:
 const translators = require('../translators.json')
 
-// Logger config:
-const loggerConfig = {
-  host: process.env.LOGGER_HOST,
-  path: process.env.LOGGER_PATH,
-  port: process.env.LOGGER_PORT,
-  hash: process.env.LOGGER_HASH,
-  enabled: (process.env.LOGGER_ENABLED === 'true'), // this is required because dotenv doesn't accept boolean params
-  verbose: (process.env.LOGGER_VERBOSE === 'true')
-}
-
-const l = logger(loggerConfig)
 const genericTranslator = adjetiveisor()
 
 const checkTranslator = (req, res) => {
@@ -89,7 +77,6 @@ exports.translate = (req, res) => {
     }
     const result = h.apiResponse(data)
     res.status(200).send(result)
-    l.log({ input: data.text, output: data.translation, translator: data.translator }) // only logs succesful requests
   } catch (e) {
     const fail = h.apiFail()
     res.status(500).send(fail)
